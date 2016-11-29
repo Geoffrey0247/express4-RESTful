@@ -1,4 +1,3 @@
-
 var User=require('../models/user');
 var express=require('express');
 
