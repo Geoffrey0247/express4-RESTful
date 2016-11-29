@@ -1,0 +1,32 @@
+{
+  "name": "express4-RESful",
+  "version": "0.0.1",
+  "description": "express4 RESTful api",
+  "main":"./bin/www",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geoffrey0247/express4-RESTful.git"
+  },
+  "keywords": [
+    "epxpress4",
+    "RESTful"
+  ],
+  "author": "Geoffrey0247",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Geoffrey0247/express4-RESTful/issues"
+  },
+  "homepage": "https://github.com/Geoffrey0247/express4-RESTful#readme",
+  "dependencies": {
+    "express": "~4.2.0",
+    "body-parser": "~1.0.0",
+    "mongoose": "~3.8.11"
+  },
+  "devDependencies": {
+
+  }
+}
