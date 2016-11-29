@@ -1,6 +1,4 @@
-/**
- * Created by Sandeep on 01/06/14.
- */
+
 
 // Load Our Modules
 
@@ -14,14 +12,22 @@ var app = express();
 //connect to our database
 //Ideally you will obtain DB details from a config file
 
-var dbName='user';
+var dbName='geoffrey0247';
 
 var connectionString='mongodb://localhost:27017/'+dbName;
 
-mongoose.connect(connectionString);
+var db = mongoose.connect(connectionString);
+db.connection.on("error", function (error) {
+    console.log("数据库连接失败：" + error);
+});
 
+db.connection.on("open", function () {
+    console.log("数据库连接成功");
+});
+
+// configure body parser
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 
 app.use('/api', userRoute);
 

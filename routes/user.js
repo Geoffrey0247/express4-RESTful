@@ -1,6 +1,3 @@
-/**
- * Created by Sandeep on 01/06/14.
- */
 
 var User=require('../models/user');
 var express=require('express');
@@ -11,16 +8,17 @@ var router=express.Router();
 
 router.route('/user')
     .get(function(req,res){
-       User.find(function(err,user){
+       User.find({}, function(err,user){
            if(err)
                 res.send(err);
+           console.log(user);
            res.json(user);
        });
     })
 
     .post(function(req,res){
         var user=new User(req.body);
-        User.save(function(err){
+        user.save(function(err){
             if(err)
                 res.send(err);
             res.send({message:'User Added'});
@@ -36,7 +34,7 @@ router.route('/user/:id')
 
            for(prop in req.body){
                 user[prop]=req.body[prop];
-           }
+            }
 
             // save the user
             user.save(function(err) {
@@ -65,7 +63,7 @@ router.route('/user/:id')
             if (err)
                 res.send(err);
 
-            res.json({ message: 'Successfully deleted' });
+            res.json({ message: 'User Successfully deleted' });
         });
     });
 
