@@ -16,17 +16,18 @@ var connectionString='mongodb://localhost:27017/'+dbName;
 
 var db = mongoose.connect(connectionString);
 db.connection.on("error", function (error) {
-    console.log("数据库连接失败：" + error);
+    console.log("database connected failed:" + error);
 });
 
 db.connection.on("open", function () {
-    console.log("数据库连接成功");
+    console.log("database connected successful!");
 });
 
 // configure body parser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));//false(String or Array)
 app.use(bodyParser.json());
 
+// route list
 app.use('/api', userRoute);
 
 module.exports = app;
