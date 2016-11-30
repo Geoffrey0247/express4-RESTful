@@ -2,7 +2,7 @@
   "name": "express4-RESful",
   "version": "0.0.1",
   "description": "express4 RESTful api",
-  "main":"./bin/www",
+  "main": "./bin/www",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
@@ -22,11 +22,18 @@
   },
   "homepage": "https://github.com/Geoffrey0247/express4-RESTful#readme",
   "dependencies": {
-    "express": "~4.2.0",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.0.0",
-    "mongoose": "~3.8.11"
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "~4.2.0",
+    "express-session": "^1.14.2",
+    "mongoose": "~3.8.11",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }

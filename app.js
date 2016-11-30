@@ -2,8 +2,12 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
-var userRoute = require('./routes/user');
 var mongoose = require('mongoose');
+var morgan = require('morgan');
+var cookieParser = require('cookie-parser');
+var passport = require('passport');
+
+var userRoute = require('./routes/user');
 
 var app = express();
 
@@ -24,8 +28,11 @@ db.connection.on("open", function () {
 });
 
 // configure body parser
-app.use(bodyParser.urlencoded({ extended: true }));//false(String or Array)
+app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));//false(String or Array)
+
+app.use(passport.initialize());
 
 // route list
 app.use('/api', userRoute);
